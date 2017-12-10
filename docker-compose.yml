@@ -1,0 +1,22 @@
+version: '3.4'
+
+networks:
+  mm:
+
+services:
+  magic_mirror:
+    restart: always
+    container_name: magic_mirror
+    networks:
+      - mm
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - MIRROR_VERSION=v2.1.2
+    image: jhnoor/docker-magicmirror
+    ports:
+      - '80:8080'
+    volumes:
+      - './config:/opt/magic_mirror/config'
+    #   - './modules:/opt/magic_mirror/modules'
