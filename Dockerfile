@@ -1,12 +1,11 @@
 FROM node:latest
 
 ENV NODE_ENV production
-ENV MM_PORT 8080
+ENV MM_PORT 80
 
 WORKDIR /opt/magic_mirror
 
-ARG MIRROR_VERSION
-RUN git clone --depth=1 --branch=$MIRROR_VERSION https://github.com/MichMich/MagicMirror.git .
+COPY magic_mirror_v2.1.2 .
 
 RUN cp -R modules /opt/magic_mirror/unmount_modules
 RUN cp -R config /opt/magic_mirror/unmount_config

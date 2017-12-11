@@ -9,14 +9,11 @@ services:
     container_name: magic_mirror
     networks:
       - mm
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-      args:
-        - MIRROR_VERSION=v2.1.2
+    build: .
     image: jhnoor/docker-magicmirror
     ports:
-      - '80:8080'
+      - '80:80'
     volumes:
       - './config:/opt/magic_mirror/config'
-    #   - './modules:/opt/magic_mirror/modules'
+      - './modules:/opt/magic_mirror/modules'
+
