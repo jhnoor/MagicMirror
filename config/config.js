@@ -48,7 +48,8 @@ var config = {
       config: {
         location: "Trondheim",
         locationID: "03133880",  //ID from http://www.openweathermap.org/help/city_list.txt
-        appid: "b83ae2c21675815fd0f615c1052ef016"
+        appid: "b83ae2c21675815fd0f615c1052ef016",
+        colored: true
       }
     },
     {
