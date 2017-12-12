@@ -10,7 +10,7 @@ services:
     networks:
       - mm
     build: .
-    image: jhnoor/docker-magicmirror
+    image: jhnoor/docker-magicmirror:node
     ports:
       - '80:80'
     volumes:
